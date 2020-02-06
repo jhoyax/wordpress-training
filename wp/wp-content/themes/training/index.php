@@ -10,27 +10,42 @@
  */
 get_header(); ?>
 
-<?php if (have_posts()) : ?>
-  <?php while (have_posts()) : the_post(); ?>
+<div class="articles">
+  <div class="articles-section">
+    <div class="l-container">
+      <h1 class="articles-title">Latest Articles</h1>
+      
+      <div class="articles-group">
+        <h2>Latest News</h2>
+        <div class="articles-group-list">
+          <?php import_part('post-list', ['post_type' => 'news', 'limit' => 3]); ?>
+        </div>
+      </div>
+      
+      <div class="articles-group">
+        <h2>Latest Events</h2>
+        <div class="articles-group-list">
+          <?php import_part('post-list', ['post_type' => 'events', 'limit' => 3]); ?>
+        </div>
+      </div>
+      
+      <div class="articles-group">
+        <h2>Featured News</h2>
+        <div class="articles-group-list">
+          <?php import_part('featured-post-list', ['field' => 'featured_news']); ?>
+        </div>
+      </div>
+      
+      <div class="articles-group">
+        <h2>Featured Events</h2>
+        <div class="articles-group-list">
+          <?php import_part('featured-post-list', ['field' => 'featured_events']); ?>
+        </div>
+      </div>
 
-    <?php echo get_permalink(); ?>
-
-    <?php if (has_post_thumbnail()) : ?>
-
-      <?php the_post_thumbnail(''); ?>
-
-    <?php else: ?>
-
-      <?php //NoIMAGE?>
-
-    <?php endif; ?>
-
-    <?php echo get_the_date('Y/m/d'); ?>
-    <?php the_title(); ?>
-    <?php the_content(); ?>
-
-  <?php endwhile; ?>
-<?php endif; ?>
+    </div>
+  </div>
+</div>
 
 <?php
 get_sidebar();

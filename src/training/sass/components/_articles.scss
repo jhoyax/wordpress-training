@@ -1,0 +1,16 @@
+.articles {
+    padding: 20px 15px;
+}
+
+.articles-group {
+    margin-top: 10px;
+}
+
+.articles-group-list {
+    display: flex;
+    flex-wrap: nowrap;
+
+    > article {
+        margin: 10px;
+    }
+}
