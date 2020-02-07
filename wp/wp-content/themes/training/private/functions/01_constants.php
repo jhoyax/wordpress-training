@@ -22,3 +22,5 @@ $load_release_hash = function () {
 };
 
 define('ANTICACHE_HASH', $load_release_hash());
+
+define('POST_LIST_IMAGE_SIZE', 300);

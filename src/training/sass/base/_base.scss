@@ -18,3 +18,11 @@ body {
   color: $base-font-color;
   background-color: $base-background-color;
 }
+
+
+a {
+  color: $black;
+  &:hover {
+    color: $gray;
+  }
+}
