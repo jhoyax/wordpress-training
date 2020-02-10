@@ -5,7 +5,7 @@
     ];
     $category = '';
     if ($post_type = get_post_type()) {
-    $category = $category_list[$post_type];
+        $category = $category_list[$post_type] ?? '';
     }
 ?>
 <article class="post-section">

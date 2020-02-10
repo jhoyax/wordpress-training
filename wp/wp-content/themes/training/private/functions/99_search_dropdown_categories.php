@@ -14,7 +14,7 @@ function search_dropdown_categories() {
 }
 
 function category_search_filter($query) {
-  if(isset($_GET['category-id'])) {
+  if(isset($_GET['category-id']) && isset($_GET['s'])) {
     $cat_id = $_GET['category-id'];
     if ($cat_id && !is_admin()) {
       $query->set( 'tax_query',
