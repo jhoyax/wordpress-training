@@ -13,7 +13,7 @@ get_header(); ?>
 <div class="articles">
   <div class="articles-section">
     <div class="l-container">
-      <h1 class="articles-title">Latest Articles</h1>
+      <h1 class="articles-title"><u>Latest Articles</u></h1>
       
       <div class="articles-group">
         <h2>Latest News</h2>

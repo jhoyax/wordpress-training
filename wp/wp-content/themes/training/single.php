@@ -4,6 +4,15 @@
  *
  * @see    https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  */
+$category_list = [
+  'news' => 'news_category',
+  'events' => 'events_category',
+];
+$category = '';
+if ($post_type = get_queried_object()->post_type) {
+  $category = $category_list[$post_type];
+}
+
 get_header(); ?>
 
 <div class="l-main-section">
@@ -40,10 +49,12 @@ get_header(); ?>
       <?php endforeach; ?>
     <?php endif; ?>
 
-    <?php if ($terms = get_the_terms(get_the_ID(), 'CUSTOM_TAXONOMY_NAME')): // Return either array or false when custom taxonomy exist.?>
+    <?php if ($terms = get_the_terms(get_the_ID(), $category)): // Return either array or false when custom taxonomy exist.?>
+      <ul>
       <?php foreach ($terms as $term): // $term is instance of WP_Term(タグ).?>
-        <?php echo esc_html($term->name); ?>
+        <li><a href="<?php echo get_term_link($term); ?>"><?php echo esc_html($term->name); ?></a></li>
       <?php endforeach; ?>
+      </ul>
     <?php endif; ?>
 
     <?php if ($newer_post = get_next_post()): // Return the instance of Post newer post than current if exist.?>
