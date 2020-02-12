@@ -11,15 +11,17 @@
 get_header(); ?>
 
 <?php while (have_posts()) : the_post(); ?>
-    <div class="l-main-section">
-        <div class="l-container">
+<main class="l-main">
+    <div class="l-container">
+        <section class="section">
             <h1 class="l-main-title"><?php the_title(); ?></h1>
             <?php the_content(); ?>
             <br><br>
-            <h1>Contact Us Form</h1>
-            <?php echo do_shortcode( '[mwform_formkey key="49"]' ); ?>
-        </div>
+            <h1>Contact Us</h1>
+            <?php echo do_shortcode( '[mwform_formkey key="21"]' ); ?>
+        </section>
     </div>
+</main>
 <?php endwhile; // End of the loop.?>
 
 <?php

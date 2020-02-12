@@ -1,0 +1,50 @@
+.search-form {
+    margin-left: 10px;
+    position: relative;
+}
+
+.search-form__box {
+    display: none;
+    position: absolute;
+    right: 50px;
+    top: 0;
+    background-color: $color-white;
+    border: 1px solid $base-font-color;
+    padding: 10px;
+
+    &.open {
+        display: block;
+    }
+}
+
+.search-form__button {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: $color-green;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &:before {
+        content: '';
+        position: absolute;
+        left: 18px;
+        width: 12px;
+        height: 12px;
+        border: 2px solid $color-white;
+        border-radius: 50%;
+        top: 16px;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        right: 17px;
+        width: 2px;
+        height: 6px;
+        border: 1px solid $color-white;
+        bottom: 17px;
+        transform: rotate(-43deg);
+        background-color: $color-white;
+    }
+}

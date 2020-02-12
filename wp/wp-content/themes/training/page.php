@@ -11,12 +11,12 @@
 get_header(); ?>
 
 <?php while (have_posts()) : the_post(); ?>
-    <div class="l-main-section">
+    <main class="l-main">
         <div class="l-container">
             <h1 class="l-main-title"><?php the_title(); ?></h1>
             <?php the_content(); ?>
         </div>
-    </div>
+    </main>
 <?php endwhile; // End of the loop.?>
 
 <?php

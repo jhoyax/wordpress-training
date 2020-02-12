@@ -1,4 +1,3 @@
+import SearchButton from './components/search-form';
 
-if (process.env.NODE_ENV === 'development') {
-  console.debug('development');
-}
+new SearchButton();

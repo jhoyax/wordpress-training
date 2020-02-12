@@ -1,0 +1,55 @@
+.nav__list {
+    display: flex;
+}
+
+.nav__item {
+    margin: 0 15px;
+    position: relative;
+}
+
+.nav__link {
+    color: $base-font-color;
+    font-weight: bold;
+
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        width: 0px;
+        background: $base-font-color;
+        transition: width 200ms ease;
+    }
+
+    &:hover {
+        &:after {
+            width: 100%;
+
+        }
+    }
+
+    &.active {
+        &:after {
+            width: 100%;
+        }
+    }
+}
+
+.nav__link--green {
+    &:after {
+        background: $color-green;
+    }
+}
+
+.nav__link--orange {
+    &:after {
+        background: $color-orange;
+    }
+}
+
+.nav__link--blue {
+    &:after {
+        background: $color-blue;
+    }
+}

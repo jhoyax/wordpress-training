@@ -1,19 +1,7 @@
-.post-section-image {
-    position: relative;
-}
-
-.post-new {
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-
-.post-image {
-    background-repeat: no-repeat; 
-    background-position: 50% 50%;
-}
-
-.post-section {
-    border: 1px solid $black;
-    padding: 5px;
+.post__list {
+    list-style: none;
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }

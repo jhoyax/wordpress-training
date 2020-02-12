@@ -1,19 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+
+// fonts
+$open-sans: 'Open Sans', sans-serif;
+
 //antialiased,subpixel-antialiased,none
 $font-smoothing: antialiased;
 
 //auto,optimizeSpeed,optimizeLegibility,geometricPrecision
 $text-rendering: auto;
 
-$base-font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
-$base-font-size: 14px;
+$base-font-family: $open-sans;
+$base-font-size: 16px;
 $base-font-color: #333;
 $base-background-color: #fff;
 
-//$color-primary
-//$color-accent
+$color-blue: #1e90ff;
+$color-orange: #ff6347;
+$color-green: #3cb371;
+$color-white: #fff;
 
 $breakpoint-tablet: 1279px;
 $breakpoint-mobile: 759px;
 
-$black: #000;
-$gray: #808080;
+$container-width: 1080px;

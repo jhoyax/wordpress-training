@@ -14,19 +14,21 @@ if ($category = get_queried_object()->taxonomy) {
 }
 
 get_header(); ?>
-<div class="l-main-section">
-  <?php import_part('archive-filter', ['post_type' => $post_type]); ?>
+<main class="l-main">
+  <div class="l-container">
+  <?php import_part('modules/archive-filter', ['post_type' => $post_type]); ?>
   
   <?php if (have_posts()) : ?>
     <div class="articles-group-list">
       <?php while (have_posts()) : the_post(); ?>
-        <?php import_part('post-card'); ?>
+        <?php import_part('modules/post-card'); ?>
       <?php endwhile; ?>
     </div>
 
     <div class="pagination"><?php wp_pagenavi(); ?></div>
   <?php endif; ?>
-</div>
+    </div>
+</main>
 <?php
 get_sidebar();
 get_footer();

@@ -5,20 +5,21 @@
  * @see https://codex.wordpress.org/Template_Hierarchy
  */
 get_header(); ?>
-<div class="l-main-section">
+<main class="l-main">
+  <div class="l-container">
+  <?php import_part('modules/archive-filter', ['post_type' => 'events']); ?>
 
-<?php import_part('archive-filter', ['post_type' => 'events']); ?>
+    <?php if (have_posts()) : ?>
+      <div class="articles-group-list">
+        <?php while (have_posts()) : the_post(); ?>
+          <?php import_part('modules/post-card'); ?>
+        <?php endwhile; ?>
+      </div>
 
-  <?php if (have_posts()) : ?>
-    <div class="articles-group-list">
-      <?php while (have_posts()) : the_post(); ?>
-        <?php import_part('post-card'); ?>
-      <?php endwhile; ?>
+      <div class="pagination"><?php wp_pagenavi(); ?></div>
+    <?php endif; ?>
     </div>
-
-    <div class="pagination"><?php wp_pagenavi(); ?></div>
-  <?php endif; ?>
-  </div>
+</main>
 <?php
 get_sidebar();
 get_footer();

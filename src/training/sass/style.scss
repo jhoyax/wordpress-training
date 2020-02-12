@@ -14,14 +14,13 @@
 
 // @import "components/header";
 @import "components/single/body";
-@import "components/articles";
-@import "components/input";
-@import "components/post";
-@import "components/menu";
-@import "components/filter";
-@import "components/pagination";
+@import 'components/header';
+@import 'components/logo';
+@import 'components/nav';
+@import 'components/search-form';
+@import 'components/section';
+@import 'components/post';
+@import 'components/footer';
 
 @import 'layout/grid';
 @import 'layout/layout';
-@import 'layout/header';
-@import 'layout/footer';

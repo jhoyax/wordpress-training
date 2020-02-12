@@ -10,7 +10,7 @@
 
 <head>
   <meta charset="<?php bloginfo('charset'); ?>">
-  <title><?php wp_title(''); echo wp_title('', false) ? ' | ' : '';  bloginfo( 'name' ); ?></title>
+  <title><?php wp_title('|'); ?></title>
   <meta name="description" content="">
   <meta name="keywords" content="">
   <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
@@ -37,37 +37,4 @@
 
 <body <?php body_class(); ?>>
 
-  <header class="l-header">
-    <div class="header">
-      <div class="l-container">
-        <div class="header-logo">
-          <div class="header-logo-image">
-            <a href="<?php echo site_url('/'); ?>" class="header-logo-link">Logo Here</a>
-          </div>
-        </div>
-        <nav class="nav">
-          <?php
-            wp_nav_menu([
-              'menu' => 'Header',
-              'fallback_cb' => false
-            ]);
-          ?>
-        </nav>
-        <div class="search-form">
-          <div class="search-form-category">
-            <form role="search" method="get" class="search-form-category-form"
-              action="<?php echo site_url('/'); ?>">
-              <?php search_dropdown_categories(); ?>
-              <input class="search-form-category-form-field" 
-                type="search" class="search-field" 
-                placeholder="Search..."
-                value="<?php echo esc_attr(get_search_query()); ?>"
-                name="s"
-                title="<?php echo esc_attr_x('Search for:', 'label'); ?>" />
-              <input type="submit" class="search-form-category-form-submit" value="Submit" />
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
+<?php import_part('header'); ?>
