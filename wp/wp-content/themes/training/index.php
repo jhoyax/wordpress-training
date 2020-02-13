@@ -12,20 +12,42 @@ get_header(); ?>
 <main class="l-main">
   <div class="l-container">
     <section class="section">
-      <h2>Latest News</h2>
-      <?php import_part('modules/post-list', ['post_type' => 'news', 'limit' => 3]); ?>
+      <div class="section__header">
+        <h2 class="section__title">LATEST NEWS</h2>
+      </div>
+      <div class="section__content">
+        <?php import_part('modules/post-list', ['post_type' => 'news', 'limit' => 3]); ?>
+      </div>
+      <div class="section__footer">
+        <a href="<?php echo resolve_url('news'); ?>" class="section__link">ALL NEWS</a>
+      </div>
     </section>
     <section class="section">
-      <h2>Latest Events</h2>
-      <?php import_part('modules/post-list', ['post_type' => 'events', 'limit' => 3]); ?>
+      <div class="section__header">
+        <h2 class="section__title">LATEST EVENTS</h2>
+      </div>
+      <div class="section__content">
+        <?php import_part('modules/post-list', ['post_type' => 'events', 'limit' => 3]); ?>
+      </div>
+      <div class="section__footer">
+        <a href="<?php echo resolve_url('events'); ?>" class="section__link">ALL EVENTS</a>
+      </div>
     </section>
     <section class="section">
-      <h2>Featured News</h2>
-      <?php import_part('modules/featured-post-list', ['field' => 'featured_news']); ?>
+      <div class="section__header">
+        <h2 class="section__title">FEATURED NEWS</h2>
+      </div>
+      <div class="section__content">
+        <?php import_part('modules/featured-post-list', ['field' => 'featured_news']); ?>
+      </div>
     </section>
     <section class="section">
-      <h2>Featured Events</h2>
-      <?php import_part('modules/featured-post-list', ['field' => 'featured_events']); ?>
+      <div class="section__header">
+        <h2 class="section__title">FEATURED EVENTS</h2>
+      </div>
+      <div class="section__content">
+        <?php import_part('modules/featured-post-list', ['field' => 'featured_events']); ?>
+      </div>
     </section>
   </div>
 </main>

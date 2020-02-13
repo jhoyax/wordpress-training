@@ -1,3 +1,48 @@
 .section {
-    margin: 30px 0;
+    margin: 30px 0 60px 0;
+}
+
+.section__header {
+    display: flex;
+    justify-content: center;
+}
+
+.section__title {
+    font-size: 1.5em;
+}
+
+.section__footer {
+    display: flex;
+    justify-content: center;
+}
+
+.section__link {
+    color: $color-white;
+    background-color: $color-green;
+    padding: 15px 0;
+    font-weight: bold;
+    position: relative;
+    width: 230px;
+    text-align: center;
+    transition: background-color 0.5s;
+
+    &:after {
+        content: '';
+        position: absolute;
+        right: 25px;
+        top: 22px;
+        width: 10px;
+        height: 10px;
+        border-top: 3px solid $color-white;
+        border-right: 3px solid $color-white;
+        transform: rotate(45deg);
+    }
+
+    &:hover {
+        background-color: $color-dark-green;
+    }
+}
+
+.section__content {
+    margin: 20px 0;
 }

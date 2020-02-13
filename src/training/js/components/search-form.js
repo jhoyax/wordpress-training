@@ -8,6 +8,7 @@ export default class SearchForm {
 
     init() {
         this.button.addEventListener('click', () => {
+            this.button.classList.toggle('open');
             this.form.classList.toggle('open');
         });
     }

@@ -7,17 +7,35 @@
 get_header(); ?>
 <main class="l-main">
   <div class="l-container">
-  <?php import_part('modules/archive-filter', ['post_type' => 'news']); ?>
-  
-  <?php if (have_posts()) : ?>
-    <div class="articles-group-list">
-      <?php while (have_posts()) : the_post(); ?>
-        <?php import_part('modules/post-card'); ?>
-      <?php endwhile; ?>
-    </div>
+    <section class="section">
+      <div class="section__content">
+        <?php import_part('modules/archive-filter', ['post_type' => 'news']); ?>
+      </div>
+    </section>
 
-    <div class="pagination"><?php wp_pagenavi(); ?></div>
-  <?php endif; ?>
+    <?php if (have_posts()) : ?>
+      <section class="section">
+        <div class="section__content">
+          <ul class="post__list">
+            <?php if (have_posts()) : ?>
+              <?php while (have_posts()) : the_post(); ?>
+                <li class="post__item">
+                  <?php import_part('modules/post-card'); ?>
+                </li>
+              <?php endwhile; ?>
+            <?php else: ?>
+              <li>No post found.</li>
+            <?php endif; ?>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section__content">
+          <div class="pagination"><?php wp_pagenavi(); ?></div>
+        </div>
+      </section>
+    <?php endif; ?>
     </div>
 </main>
 <?php

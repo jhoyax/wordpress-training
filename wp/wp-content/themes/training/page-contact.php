@@ -14,11 +14,14 @@ get_header(); ?>
 <main class="l-main">
     <div class="l-container">
         <section class="section">
-            <h1 class="l-main-title"><?php the_title(); ?></h1>
-            <?php the_content(); ?>
-            <br><br>
-            <h1>Contact Us</h1>
-            <?php echo do_shortcode( '[mwform_formkey key="21"]' ); ?>
+            <div class="section__header">
+                <h2 class="section__title">CONTACT US</h2>
+            </div>
+            <div class="section__content">
+                <div class="contact-form">
+                    <?php echo do_shortcode( '[mwform_formkey key="21"]' ); ?>
+                </div>
+            </div>
         </section>
     </div>
 </main>

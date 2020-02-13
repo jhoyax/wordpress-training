@@ -4,6 +4,14 @@
     width: 100%;
     background-color: rgba($color-white, 0.8);
     top: 0;
+    z-index: 1;
+    border-bottom: 1px solid rgba($color-light-grey, 0.3);
+}
+
+.admin-bar {
+    .header {
+        top: 32px;
+    }
 }
 
 .header__inner {

@@ -1,0 +1,20 @@
+.category-filter__list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+
+    li + li {
+        &::before {
+            content: '|';
+            margin: 0 5px;
+        }
+    }
+
+    a {
+        color: $base-font-color;
+
+        &:hover {
+            color: $color-grey;
+        }
+    }
+}

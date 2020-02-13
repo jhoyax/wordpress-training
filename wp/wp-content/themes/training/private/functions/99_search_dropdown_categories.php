@@ -3,7 +3,7 @@
 function search_dropdown_categories() {
     $dropdown_categories = array(
       'show_option_all'  => 'All Categories',
-      'class'            => 'search-form-category-form-list',
+      'class'            => 'search-form__categories-field',
       'taxonomy'         =>['news_category', 'events_category'],
       'name'             => 'category-id',
       'hide_empty'       => false,
