@@ -9,25 +9,26 @@ get_header(); ?>
   <div class="l-container">
     <section class="section">
       <div class="section__header">
-        <h2 class="section__title">Search Result for "<?php echo $_GET['s']; ?>"</h2>
+        <h1 class="section__title">Search Result for "<?php echo $_GET['s']; ?>"</h1>
       </div>
       <div class="section__content">
         <ul class="post__list">
           <?php if (have_posts()) : ?>
-            <?php while (have_posts()) : the_post(); ?>
-              <li class="post__item">
-                <?php import_part('modules/post-card'); ?>
-              </li>
-            <?php endwhile; ?>
+          <?php while (have_posts()) : the_post(); ?>
+          <li class="post__item">
+            <?php import_part('modules/post-card'); ?>
+          </li>
+          <?php endwhile; ?>
           <?php else: ?>
-            <li>No post found.</li>
+          <li>No post found.</li>
           <?php endif; ?>
         </ul>
       </div>
     </section>
     <section class="section">
       <div class="section__content">
-        <div class="pagination"><?php wp_pagenavi(); ?></div>
+        <div class="pagination"><?php wp_pagenavi(); ?>
+        </div>
       </div>
     </section>
   </div>

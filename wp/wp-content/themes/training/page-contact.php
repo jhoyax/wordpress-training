@@ -15,11 +15,11 @@ get_header(); ?>
     <div class="l-container">
         <section class="section">
             <div class="section__header">
-                <h2 class="section__title">CONTACT US</h2>
+                <h1 class="section__title"><?php the_title(); ?></h1>
             </div>
             <div class="section__content">
                 <div class="contact-form">
-                    <?php echo do_shortcode( '[mwform_formkey key="21"]' ); ?>
+                    <?php echo do_shortcode('[mwform_formkey key="21"]'); ?>
                 </div>
             </div>
         </section>

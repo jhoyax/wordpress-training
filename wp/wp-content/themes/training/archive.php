@@ -11,23 +11,45 @@ $post_list = [
 $post_type = '';
 if ($category = get_queried_object()->taxonomy) {
   $post_type = $post_list[$category];
+} elseif ($name = get_queried_object()->name) {
+  $post_type = $name;
 }
 
 get_header(); ?>
 <main class="l-main">
   <div class="l-container">
-  <?php import_part('modules/archive-filter', ['post_type' => $post_type]); ?>
-  
-  <?php if (have_posts()) : ?>
-    <div class="articles-group-list">
-      <?php while (have_posts()) : the_post(); ?>
-        <?php import_part('modules/post-card'); ?>
-      <?php endwhile; ?>
-    </div>
+    <section class="section">
+      <div class="section__content">
+        <?php import_part('modules/archive-filter', ['post_type' => $post_type]); ?>
+      </div>
+    </section>
 
-    <div class="pagination"><?php wp_pagenavi(); ?></div>
-  <?php endif; ?>
-    </div>
+    <section class="section">
+      <div class="section__header">
+        <h1 class="section__title"><?php echo ucfirst($post_type); ?></h1>
+      </div>
+      <div class="section__content">
+        <ul class="post__list">
+          <?php if (have_posts()) : ?>
+          <?php while (have_posts()) : the_post(); ?>
+          <li class="post__item">
+            <?php import_part('modules/post-card'); ?>
+          </li>
+          <?php endwhile; ?>
+          <?php else: ?>
+          <li>No post found.</li>
+          <?php endif; ?>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section__content">
+        <div class="pagination"><?php wp_pagenavi(); ?>
+        </div>
+      </div>
+    </section>
+  </div>
 </main>
 <?php
 get_sidebar();

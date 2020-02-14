@@ -13,30 +13,32 @@ get_header(); ?>
       </div>
     </section>
 
-    <?php if (have_posts()) : ?>
-      <section class="section">
-        <div class="section__content">
-          <ul class="post__list">
-            <?php if (have_posts()) : ?>
-              <?php while (have_posts()) : the_post(); ?>
-                <li class="post__item">
-                  <?php import_part('modules/post-card'); ?>
-                </li>
-              <?php endwhile; ?>
-            <?php else: ?>
-              <li>No post found.</li>
-            <?php endif; ?>
-          </ul>
-        </div>
-      </section>
+    <section class="section">
+      <div class="section__header">
+        <h1 class="section__title">News</h1>
+      </div>
+      <div class="section__content">
+        <ul class="post__list">
+          <?php if (have_posts()) : ?>
+          <?php while (have_posts()) : the_post(); ?>
+          <li class="post__item">
+            <?php import_part('modules/post-card'); ?>
+          </li>
+          <?php endwhile; ?>
+          <?php else: ?>
+          <li>No post found.</li>
+          <?php endif; ?>
+        </ul>
+      </div>
+    </section>
 
-      <section class="section">
-        <div class="section__content">
-          <div class="pagination"><?php wp_pagenavi(); ?></div>
+    <section class="section">
+      <div class="section__content">
+        <div class="pagination"><?php wp_pagenavi(); ?>
         </div>
-      </section>
-    <?php endif; ?>
-    </div>
+      </div>
+    </section>
+  </div>
 </main>
 <?php
 get_sidebar();
