@@ -17,9 +17,77 @@
 .header__inner {
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
 
 .header__menu  {
     display: flex;
     align-items: center;
+
+    @include max-screen($breakpoint-tablet) {
+        visibility: hidden;
+    }
+}
+
+.header__burger {
+    visibility: hidden;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    height: 15px;
+    width: 18px;
+
+    @include max-screen($breakpoint-tablet) {
+        visibility: visible;
+    }
+}
+
+.header__burger-icon {
+    margin-top: 5px;
+    position: relative;
+    width: 15px;
+    height: 2px;
+    background-color: $base-font-color;
+    transition: width 0.3s, background-color 0.3s;
+
+    &:before {
+        content: '';
+        width: 18px;
+        height: 2px;
+        background-color: $base-font-color;
+        position: absolute;
+        left: 0;
+        top: -5px;
+        transform: rotate(0);
+        transition: transform 0.3s;
+    }
+
+    &:after {
+        content: '';
+        width: 18px;
+        height: 2px;
+        background-color: $base-font-color;
+        position: absolute;
+        left: 0;
+        top: 5px;
+        transform: rotate(0);
+        transition: transform 0.3s;
+    }
+
+    &.open {
+
+        background-color: $color-light-grey;
+        width: 0;
+
+        &:before {
+            top: 0px;
+            transform: rotate(-43deg);
+        }
+    
+        &:after {
+            top: 0px;
+            transform: rotate(43deg);
+        }
+
+    }
 }

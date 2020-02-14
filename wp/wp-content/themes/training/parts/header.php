@@ -11,9 +11,12 @@
                     <?php endif; ?>
                 </a>
             </div>
-            <div class="header__menu">
+            <div class="header__menu js-header-menu">
                 <?php import_part('modules/nav'); ?>
                 <?php import_part('modules/search-form'); ?>
+            </div>
+            <div class="header__burger js-header-burger">
+                <div class="header__burger-icon js-header-burger-icon"></div>
             </div>
         </div>
     </div>

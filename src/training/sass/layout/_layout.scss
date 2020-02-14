@@ -6,4 +6,8 @@
     width: $container-width;
     max-width: 100%;
     margin: 0 auto;
+
+    @include max-screen($breakpoint-tablet) {
+        padding: 0 10px;
+    }
 }

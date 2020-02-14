@@ -3,17 +3,24 @@
     
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
 }
 
 .post__item {
-    border: 1px solid $color-light-grey;
-    transition: box-shadow 0.5s;
-    width: calc((100%/3) - 60px);
-
+    max-width: calc(100%/3);
+    flex: calc(100%/3);
+    padding: 0 10px;
     margin-bottom: 30px;
 
-    &:hover {
-        box-shadow: 0 5px 15px 0 rgba($color-grey, 0.5);
+    @include max-screen($breakpoint-mobile) {
+        max-width: 50%;
+        flex: 50%;
+        padding: 0 10px;
+    }
+
+    @include max-screen($breakpoint-mobile-min) {
+        max-width: 100%;
+        flex: 100%;
+        padding: 0;
+        margin-bottom: 20px;
     }
 }
