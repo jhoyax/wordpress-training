@@ -124,9 +124,55 @@
 .search-form__keyword-field {
     display: block;
     width: 100%;
-    border-bottom: 1px solid $color-grey;
 
     &:focus {
         outline: none;
+    }
+}
+
+.search-form__form {
+    border-bottom: 1px solid $color-grey;
+    display: flex;
+    padding-bottom: 5px;
+}
+
+.search-form__submit-button {
+    width: 20px;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+
+    &:before {
+        content: ' ';
+        width: 10px;
+        height: 10px;
+        border: 2px solid $color-grey;
+        border-radius: 50%;
+        position: absolute;
+        top: 4px;
+        left: 2px;
+    }
+
+    &:after {
+        content: ' ';
+        background-color: $color-grey;
+        border: 1px solid $color-grey;
+        position: absolute;
+        height: 6px;
+        transform: rotate(-43deg);
+        bottom: 5px;
+        right: 4px;
+    }
+
+    @include max-screen($breakpoint-tablet) {
+        &:after {
+            right: 5px;
+        }
+    }
+
+    @include max-screen($breakpoint-mobile) {
+        &:after {
+            right: 4px;
+        }
     }
 }
