@@ -25,7 +25,22 @@
     align-items: center;
 
     @include max-screen($breakpoint-tablet) {
-        display: none;
+        display: flex;
+        flex-direction: column;
+        width: 85%;
+        height: 100vh;
+        background-color: $color-white;
+        position: fixed;
+        top: 0;
+        right: 0;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.3s;
+
+        &.open {
+            pointer-events: auto;
+            opacity: 1;
+        }
     }
 }
 
