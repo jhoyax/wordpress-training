@@ -16,7 +16,11 @@
                 <?php import_part('modules/search-form'); ?>
             </div>
             <div class="header__burger js-header-burger">
-                <div class="header__burger-icon js-header-burger-icon"></div>
+                <button class="header__burger-icon js-header-burger-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </div>

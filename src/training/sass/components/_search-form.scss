@@ -44,14 +44,15 @@
     &:after {
         content: '';
         position: absolute;
-        right: 17px;
-        bottom: 17px;
+        right: 15px;
+        bottom: 18px;
         width: 2px;
         height: 6px;
         border: 1px solid $color-white;
         transform: rotate(-43deg);
         background-color: $color-white;
-        transition: transform 0.3s;
+        transition: height 0.3s;
+        transform-origin: bottom right;
     }
 
     &.open{
@@ -78,6 +79,7 @@
             border: 1px solid $color-white;
             transform: rotate(-43deg);
             background-color: $color-white;
+            transform-origin: unset;
         }
     }
 }

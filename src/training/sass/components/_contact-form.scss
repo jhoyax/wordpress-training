@@ -1,0 +1,21 @@
+.contact-form {
+    input, textarea {
+        outline: none;
+        border: 1px solid $color-grey;
+        display: block;
+        width: 100%;
+        padding: 15px;
+    }
+
+    p {
+        margin-bottom: 20px;
+    }
+
+    input[type=submit] {
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+        color: $color-white;
+        background-color: $color-green;
+    }
+}
