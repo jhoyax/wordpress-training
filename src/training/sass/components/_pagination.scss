@@ -1,3 +1,25 @@
 .pagination {
     text-align: center;
 }
+
+.wp-pagenavi {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+
+    // Override pagination plugin css
+    a, span {
+        border: none !important;
+        text-decoration: underline !important;
+        text-underline-position: under;
+    }
+
+    .pages {
+        flex-grow: 1;
+        display: flex;
+    }
+
+    a {
+        color: $base-font-color;
+    }
+}
